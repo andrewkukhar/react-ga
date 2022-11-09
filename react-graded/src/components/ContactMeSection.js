@@ -29,7 +29,7 @@ const ContactMeSection = () => {
       comment: "",
     },
     onSubmit: (values) => {
-      submit('https://john.com/contactme', values);
+      submit('mailto:andriikukharv@gmail.com', values);
     },
     validationSchema: Yup.object({
       firstName: Yup.string().required("Required"),
@@ -56,7 +56,7 @@ const ContactMeSection = () => {
       py={16}
       spacing={8}
     >
-      <VStack w="1024px" p={32} alignItems="flex-start">
+      <VStack w="724px" p={20} alignItems="flex-start">
         <Heading as="h1" id="contactme-section">
           Contact me
         </Heading>
@@ -85,7 +85,7 @@ const ContactMeSection = () => {
               <FormControl>
                 <FormLabel htmlFor="type">Type of enquiry</FormLabel>
                 <Select id="type" name="type" {...formik.getFieldProps("type")}>
-                  <option value="hireMe">Freelance project proposal</option>
+                  <option value="hireMe">Project proposal</option>
                   <option value="openSource">
                     Open source consultancy session
                   </option>

@@ -7,7 +7,7 @@ import {
   faMedium,
   faStackOverflow,
 } from "@fortawesome/free-brands-svg-icons";
-import { Box, HStack } from "@chakra-ui/react";
+import { Box, HStack, Stack } from "@chakra-ui/react";
 
 const socials = [
   {
@@ -81,14 +81,15 @@ const Header = () => {
       ref={headerRef}
     >
       <Box color="white" maxWidth="1280px" margin="0 auto">
-        <HStack
+        <Stack
           px={16}
           py={4}
           justifyContent="space-between"
           alignItems="center"
+          direction={['column', 'row']} spacing='24px'
         >
           <nav>
-            <HStack spacing={8}>
+            <HStack spacing={8} h='40px'>
               {socials.map(({ icon, url }) => (
                 <a
                   key={url}
@@ -102,7 +103,7 @@ const Header = () => {
             </HStack>
           </nav>
           <nav>
-            <HStack spacing={8}>
+            <HStack spacing={8} h='40px'>
               <a href="#projects" onClick={handleClick("projects")}>
                 Projects
               </a>
@@ -111,7 +112,7 @@ const Header = () => {
               </a>
             </HStack>
           </nav>
-        </HStack>
+        </Stack>
       </Box>
     </Box>
   );

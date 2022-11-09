@@ -1,7 +1,7 @@
 import { useState } from "react";
+import { send } from 'emailjs-com';
 
 const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
-
 
 const useSubmit = () => {
     const [isLoading, setLoading] = useState(false);
@@ -15,9 +15,14 @@ const useSubmit = () => {
             if (random < 0.5) {
                 throw new Error("Something went wrong");
             }
+            send('service_ak-projects',
+                'template_me0gf7v',
+                data,
+                'agJWxeoZ_cB9hOqCK'
+            )
             setResponse({
                 type: 'success',
-                message: `Thanks for your submission ${data.firstName}, we will get back to you shortly!`,
+                message: `Thanks for your submission ${data.from_name}, we will get back to you shortly!`,
             })
         } catch (error) {
             setResponse({

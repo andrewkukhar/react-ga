@@ -1,33 +1,24 @@
-import { Heading, HStack, Image, Text, VStack } from "@chakra-ui/react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import React from "react";
+import { Box, Flex } from "@chakra-ui/react";
 
-const Card = ({ title, description, imageSrc }) => {
+const Footer = () => {
   return (
-    <VStack
-      color="black"
-      backgroundColor="white"
-      cursor="pointer"
-      borderRadius="xl"
-    >
-      <Image borderRadius="xl" src={imageSrc} alt={title} />
-      <VStack spacing={4} p={4} alignItems="flex-start">
-        <HStack justifyContent="space-between" alignItems="center">
-          <Heading as="h3" size="md">
-            {title}
-          </Heading>
-        </HStack>
-        <Text color="#64748b" fontSize="lg">
-          {description}
-        </Text>
-        <HStack spacing={2} alignItems="center">
-          <p>See more</p>
-          <FontAwesomeIcon icon={faArrowRight} size="1x" />
-        </HStack>
-      </VStack>
-    </VStack>
+    <Box backgroundColor="#18181b">
+      <footer>
+        <Flex
+          margin="0 auto"
+          px={12}
+          color="white"
+          justifyContent="center"
+          alignItems="center"
+          maxWidth="1024px"
+          height={16}
+        >
+          <p>Andrew K • © 2022</p>
+        </Flex>
+      </footer>
+    </Box>
   );
 };
 
-export default Card; 
+export default Footer; 
